@@ -10,8 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: verkstedt/trello-github-connect@main
+      # - uses: actions/checkout@v3
+      # - uses: verkstedt/trello-github-connect@main
       - uses: verkstedt/trello-integration-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
