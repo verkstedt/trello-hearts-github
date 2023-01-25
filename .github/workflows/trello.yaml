@@ -1,0 +1,20 @@
+name: Trello integration
+
+on:
+  pull_request:
+    types: [opened, edited, closed]
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rematocorp/trello-integration-action@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }} # Provided by GitHub
+          trello-api-key: ${{ secrets.TRELLO_API_KEY }} # https://trello.com/app-key
+          trello-auth-token: ${{ secrets.TRELLO_AUTH_TOKEN }} # https://trello.com/app-key then click generate a token
+          trello-organization-name: ${{ env.TRELLO_ORG_NAME }} # Click org name on your board page and copy name from the URL
+          trello-list-id-pr-open: ${{ env.TRELLO_PR_OPEN_LIST_ID }} # Trello list ID for open pull request, visit a board then append .json to url to find id
+          trello-list-id-pr-closed: ${{ env.TRELLO_PR_CLOSED_LIST_ID }} # Trello list ID for closed pull request, visit a board then append .json to url to find id
