@@ -13,6 +13,7 @@ jobs:
       - uses: verkstedt/trello-integration-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-require-keyword-prefix: true
           trello-api-key: ${{ secrets.TRELLO_API_KEY }} # https://trello.com/app-key
           trello-auth-token: ${{ secrets.TRELLO_AUTH_TOKEN }} # https://trello.com/app-key then click generate a token
           trello-organization-name: ${{ vars.TRELLO_ORG_NAME }} # Your organization name to avoid assigning cards to outside members, edit your workspace details and look for the short name
