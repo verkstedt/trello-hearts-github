@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: verkstedt/trello-github-connect@main
       - uses: verkstedt/trello-integration-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
