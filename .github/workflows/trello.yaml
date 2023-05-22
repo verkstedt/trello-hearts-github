@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: verkstedt/trello-integration-action@main
+      - uses: verkstedt/trello-integration-action@fix/axios-import
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-require-keyword-prefix: true
